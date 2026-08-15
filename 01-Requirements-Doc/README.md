@@ -21,59 +21,59 @@ Hệ thống được thiết kế nhằm tối ưu hóa quy trình tiếp nhậ
 ## 1. Khảo Sát Hiện Trạng & Đề Xuất Hệ Thống Mới
 
 ### Kết quả khảo sát thực tế
-* **Thời gian thực hiện:** 5 ngày (29/06/2026 – 03/07/2026) trên 138 lượt bệnh nhân trực tiếp[cite: 3].
+* **Thời gian thực hiện:** 5 ngày (29/06/2026 – 03/07/2026) trên 138 lượt bệnh nhân trực tiếp.
 * **Thời gian tiếp nhận:**
-  * Bệnh nhân mới chưa có mã HIS: **~6 phút 30 giây** tại quầy[cite: 3].
-  * Bệnh nhân đăng ký trước: **~2 phút 05 giây**[cite: 3].
-  * *Rủi ro:* Bệnh nhân bỏ về nếu thời gian chờ kéo dài trên 25 phút[cite: 3].
-* **Tỷ lệ bệnh nhân mới:** Ghi nhận khoảng **62%** (ở ca khảo sát đầu tiên) chưa có mã bệnh nhân trên hệ thống HIS, phải khai báo thủ tục trực tiếp[cite: 3].
+  * Bệnh nhân mới chưa có mã HIS: **~6 phút 30 giây** tại quầy.
+  * Bệnh nhân đăng ký trước: **~2 phút 05 giây**.
+  * *Rủi ro:* Bệnh nhân bỏ về nếu thời gian chờ kéo dài trên 25 phút.
+* **Tỷ lệ bệnh nhân mới:** Ghi nhận khoảng **62%** (ở ca khảo sát đầu tiên) chưa có mã bệnh nhân trên hệ thống HIS, phải khai báo thủ tục trực tiếp.
 * **Xác thực BHYT & Chi phí:** 
-  * 100% trường hợp BHYT phải kiểm tra thủ công[cite: 3].
-  * 19% ca phải tra cứu/nhập lại thông tin do sai sót thẻ hoặc định danh[cite: 3].
-  * Chưa hỗ trợ thông báo chi phí khám dự kiến trước khi đăng ký[cite: 3].
-* **Điểm nghẽn chính:** Quá tải cục bộ giờ cao điểm (7:00 – 9:30 sáng)[cite: 3], nhập liệu thủ công lặp đi lặp lại[cite: 3], nền tảng YouMed hiện tại chỉ hỗ trợ bệnh nhân cũ đã có mã HIS[cite: 3].
+  * 100% trường hợp BHYT phải kiểm tra thủ công.
+  * 19% ca phải tra cứu/nhập lại thông tin do sai sót thẻ hoặc định danh.
+  * Chưa hỗ trợ thông báo chi phí khám dự kiến trước khi đăng ký.
+* **Điểm nghẽn chính:** Quá tải cục bộ giờ cao điểm (7:00 – 9:30 sáng), nhập liệu thủ công lặp đi lặp lại, nền tảng YouMed hiện tại chỉ hỗ trợ bệnh nhân cũ đã có mã HIS.
 
 ### Đề xuất giải pháp
-* Xây dựng nền tảng đăng ký trực tuyến hỗ trợ cả bệnh nhân mới và cũ chọn trước khoa, bác sĩ, ngày và ca khám[cite: 3].
-* Tự động xác thực thẻ BHYT và quyền lợi hưởng qua Cổng Giám định BHYT (BHXH Việt Nam)[cite: 3].
-* Tích hợp đồng bộ dữ liệu 2 chiều với HIS (cấp mới/trả về `MaBenhNhanHIS`, số tiếp nhận, STT khám)[cite: 3].
-* Áp dụng **28 Quy tắc nghiệp vụ** (BR01 - BR28) và **07 Nguyên tắc nghiệp vụ** (NP01 - NP07)[cite: 3].
+* Xây dựng nền tảng đăng ký trực tuyến hỗ trợ cả bệnh nhân mới và cũ chọn trước khoa, bác sĩ, ngày và ca khám.
+* Tự động xác thực thẻ BHYT và quyền lợi hưởng qua Cổng Giám định BHYT (BHXH Việt Nam).
+* Tích hợp đồng bộ dữ liệu 2 chiều với HIS (cấp mới/trả về `MaBenhNhanHIS`, số tiếp nhận, STT khám).
+* Áp dụng **28 Quy tắc nghiệp vụ** (BR01 - BR28) và **07 Nguyên tắc nghiệp vụ** (NP01 - NP07).
 
 ---
 
 ## 2. Phân Tích & Mô Hình Hóa Hệ Thống (SADT)
 
 ### Biểu đồ Phân rã Chức năng (BPC)
-Hệ thống gồm **5 phân hệ chức năng lớn** và **20 chức năng lá**[cite: 3]:
+Hệ thống gồm **5 phân hệ chức năng lớn** và **20 chức năng lá**:
 
-* **1.0 Quản lý hồ sơ bệnh nhân:** 1.1 Tra cứu | 1.2 Tiếp nhận mới | 1.3 Khởi tạo[cite: 3]
-* **2.0 Đồng bộ danh mục khám:** 2.1 Đồng bộ bác sĩ | 2.2 Đồng bộ lịch làm việc | 2.3 Đồng bộ khoa khám[cite: 3]
-* **3.0 Quản lý đăng ký lịch khám:** 3.1 Đăng ký | 3.2 Thanh toán | 3.3 Phát hành phiếu điện tử | 3.4 Thay đổi lịch | 3.5 Hủy lịch | 3.6 Tra cứu lịch sử | 3.7 Nhắc lịch | 3.8 Đồng bộ trạng thái khám[cite: 3]
-* **4.0 Quản lý tiếp nhận bệnh nhân:** 4.1 Tiếp nhận | 4.2 Xác minh thông tin | 4.3 Cấp mã và phiếu khám[cite: 3]
-* **5.0 Giám sát và báo cáo:** 5.1 Giám sát lưu lượng | 5.2 Báo cáo doanh thu | 5.3 Báo cáo theo khoa[cite: 3]
+* **1.0 Quản lý hồ sơ bệnh nhân:** 1.1 Tra cứu | 1.2 Tiếp nhận mới | 1.3 Khởi tạo.
+* **2.0 Đồng bộ danh mục khám:** 2.1 Đồng bộ bác sĩ | 2.2 Đồng bộ lịch làm việc | 2.3 Đồng bộ khoa khám
+* **3.0 Quản lý đăng ký lịch khám:** 3.1 Đăng ký | 3.2 Thanh toán | 3.3 Phát hành phiếu điện tử | 3.4 Thay đổi lịch | 3.5 Hủy lịch | 3.6 Tra cứu lịch sử | 3.7 Nhắc lịch | 3.8 Đồng bộ trạng thái khám
+* **4.0 Quản lý tiếp nhận bệnh nhân:** 4.1 Tiếp nhận | 4.2 Xác minh thông tin | 4.3 Cấp mã và phiếu khám
+* **5.0 Giám sát và báo cáo:** 5.1 Giám sát lưu lượng | 5.2 Báo cáo doanh thu | 5.3 Báo cáo theo khoa
 
 ### Luồng Dữ liệu & Tác động Dữ liệu
-* **Ma trận CRUD:** Đánh giá mức độ tác động (Create, Read, Update) của các chức năng lá lên 6 hồ sơ dữ liệu chính (D1 – D6)[cite: 3].
-* **DFD:** Xây dựng từ Mức ngữ cảnh (Context Diagram)[cite: 3], Mức 0[cite: 3] đến 5 sơ đồ DFD Mức 1 đại diện cho 5 phân hệ[cite: 3].
+* **Ma trận Thực thể - Chức năng:** Đánh giá mức độ tác động (Create, Read, Update) của các chức năng lá lên 6 hồ sơ dữ liệu chính (D1 – D6).
+* **DFD:** Xây dựng từ Mức ngữ cảnh (Context Diagram), Mức 0 đến 5 sơ đồ DFD Mức 1 đại diện cho 5 phân hệ.
 
 ---
 
 ## 3. Thiết Kế Cơ Sở Dữ Liệu & Mô Hình Quan Hệ
 
 ### Sơ đồ Thực thể Liên kết (ERD)
-Bao gồm 7 thực thể chính: `BENH_NHAN`, `NHAN_VIEN`, `LICH_HEN`, `KHOA_KHAM`, `BAC_SI`, `LICH_LAM_VIEC`, `THANH_TOAN`[cite: 3].
+Bao gồm 7 thực thể chính: `BENH_NHAN`, `NHAN_VIEN`, `LICH_HEN`, `KHOA_KHAM`, `BAC_SI`, `LICH_LAM_VIEC`, `THANH_TOAN`.
 
 ### Mô hình Quan hệ (RD - Chuẩn hóa 3NF)
 
-| Bảng | Các trường dữ liệu (*Khóa chính*, **Khóa ngoại**) |
+| Bảng | Các trường dữ liệu (<u>PK</u> Khóa chính, **FK** Khóa ngoại) |
 | :--- | :--- |
-| **BENH_NHAN** | *MaBN*, HoTen, NgaySinh, GioiTinh, CCCD, SoDienThoai, DiaChi, SoTheBHYT, TyLeHuongBHYT, MaBNHIS, TrangThaiHoSo[cite: 3] |
-| **NHAN_VIEN** | *MaNhanVien*, HoTen, ChucVu, SoDienThoai, Email, TrangThaiLamViec[cite: 3] |
-| **LICH_HEN** | *MaLichHen*, LoaiHinhKham, NgayDangKy, TrangThaiLichHen, MaQR, **MaBN**, **MaNhanVien**, **MaLichLamViec**[cite: 3] |
-| **KHOA_KHAM** | *MaKhoa*, TenKhoa, MoTa, MucPhiKham, TrangThai[cite: 3] |
-| **BAC_SI** | *MaBS*, HoTenBS, HocHamHocVi, TrangThai, **MaKhoa**[cite: 3] |
-| **LICH_LAM_VIEC** | *MaLichLamViec*, NgayKham, CaKham, GioBatDau, GioKetThuc, SoLuongToiDa, TrangThaiLich, **MaBS**[cite: 3] |
-| **THANH_TOAN** | *MaThanhToan*, NgayThanhToan, ChiPhiDuKien, PhuongThucThanhToan, TrangThaiThanhToan, **MaLichHen**[cite: 3] |
+| **BENH_NHAN** | <u>(PK) MaBN</u>, HoTen, NgaySinh, GioiTinh, CCCD, SoDienThoai, DiaChi, SoTheBHYT, TyLeHuongBHYT, MaBNHIS, TrangThaiHoSo |
+| **NHAN_VIEN** | <u>(PK) MaNhanVien</u>, HoTen, ChucVu, SoDienThoai, Email, TrangThaiLamViec |
+| **LICH_HEN** | <u>(PK) MaLichHen</u>, LoaiHinhKham, NgayDangKy, TrangThaiLichHen, MaQR, **(FK) MaBN**, **(FK) MaNhanVien**, **(FK) MaLichLamViec** |
+| **KHOA_KHAM** | <u>(PK) MaKhoa</u>, TenKhoa, MoTa, MucPhiKham, TrangThai |
+| **BAC_SI** | <u>(PK) MaBS</u>, HoTenBS, HocHamHocVi, TrangThai, **(FK) MaKhoa** |
+| **LICH_LAM_VIEC** | <u>(PK) MaLichLamViec</u>, NgayKham, CaKham, GioBatDau, GioKetThuc, SoLuongToiDa, TrangThaiLich, **(FK) MaBS** |
+| **THANH_TOAN** | <u>(PK) MaThanhToan</u>, NgayThanhToan, ChiPhiDuKien, PhuongThucThanhToan, TrangThaiThanhToan, **(FK) MaLichHen** |
 
 ---
 
