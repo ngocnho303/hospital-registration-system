@@ -20,7 +20,10 @@ Hệ thống được thiết kế nhằm tối ưu hóa quy trình tiếp nhậ
 
 ## 1. Khảo Sát Hiện Trạng & Đề Xuất Hệ Thống Mới
 
-### Kết quả khảo sát thực tế
+### 1.1. Phương pháp thu thập dữ liệu & tài liệu
+* **Quan sát thực tế:** Ghi nhận trực tiếp luồng vận hành và đo lường thời gian xử lý thực tế của 138 lượt bệnh nhân tại Bệnh viện Đa khoa Nhà Bè (29/06/2026 – 03/07/2026).
+* **Nghiên cứu tài liệu nghiệp vụ:** Phân tích quy trình tiếp nhận hiện hành, biểu mẫu đăng ký, danh mục khoa/bác sĩ và quy chuẩn dữ liệu đồng bộ HIS.
+### 1.2. Kết quả khảo sát thực tế
 * **Thời gian thực hiện:** 5 ngày (29/06/2026 – 03/07/2026) trên 138 lượt bệnh nhân trực tiếp.
 * **Thời gian tiếp nhận:**
   * Bệnh nhân mới chưa có mã HIS: **~6 phút 30 giây** tại quầy.
