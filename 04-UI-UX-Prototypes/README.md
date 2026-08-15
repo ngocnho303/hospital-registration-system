@@ -57,7 +57,9 @@ Thư mục này trình bày các bản vẽ thiết kế giao diện người d�
 *Hình 3.12. Giao diện quản lý thanh toán*
 
 ---
+---
 
 ## CÔNG CỤ SỬ DỤNG
 * **Figma**: Thiết kế và mô phỏng giao diện người dùng (UI/UX Mockups & Interactive Prototype).
+  * **Link Figma interactive Prototype:** [Redesign Hospital Management Interface](https://www.figma.com/make/4tDACIF8lqsmeKWaUx3rx0/Redesign-Hospital-Management-Interface?p=f)
 * **Claude AI**: Hỗ trợ chuẩn hóa dữ liệu mẫu (Mock Data) hiển thị trên giao diện và gợi ý bố cục thành phần (UI Layout Suggestions) theo chuẩn UX.
