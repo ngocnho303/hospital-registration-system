@@ -1,0 +1,1 @@
+Thư mục này chứa Sơ đồ Quy trình Nghiệp vụ (BPC) và Hệ thống Sơ đồ Luồng Dữ liệu (DFD) theo chuẩn Top-Down: Sơ đồ Ngữ cảnh (Context Diagram), Sơ đồ Mức đỉnh (DFD Level 0) và Sơ đồ Mức 1 (DFD Level 1 - Phân hệ Tiếp nhận Bệnh nhân).
