@@ -4,7 +4,6 @@ Thư mục này chứa Sơ đồ Quy trình Nghiệp vụ (BPC) và Hệ thống
 ---
 
 ### 1. Sơ Đồ Quy Trình Nghiệp Vụ (Business Process Chart - BPC)
-> Mô hình hóa các bước thực hiện quy trình tiếp nhận bệnh nhân (Trực tiếp tại quầy & Đăng ký Online) cùng sự tương tác giữa Bệnh nhân, Nhân viên tiếp nhận và Hệ thống HIS.
 ![Sơ đồ Quy trình Nghiệp vụ BPC](./BPC.drawio.png)
 
 ---
